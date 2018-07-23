@@ -17,6 +17,8 @@
 		DAA78A6C2105368000606D79 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA78A6B2105368000606D79 /* Repository.swift */; };
 		DAA78A6F2105390000606D79 /* RepositoriesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA78A6D2105390000606D79 /* RepositoriesListTableViewController.swift */; };
 		DAA78A702105390000606D79 /* RepositoriesListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA78A6E2105390000606D79 /* RepositoriesListTableViewController.xib */; };
+		DAA78A77210542A400606D79 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA78A76210542A400606D79 /* MessageView.swift */; };
+		DAA78A792105430600606D79 /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA78A782105430600606D79 /* MessageView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		DAA78A6B2105368000606D79 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DAA78A6D2105390000606D79 /* RepositoriesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListTableViewController.swift; sourceTree = "<group>"; };
 		DAA78A6E2105390000606D79 /* RepositoriesListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListTableViewController.xib; sourceTree = "<group>"; };
+		DAA78A76210542A400606D79 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		DAA78A782105430600606D79 /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		DAA78A522105357500606D79 /* GitTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DAA78A712105417E00606D79 /* UtilityViews */,
 				DAA78A6A2105366F00606D79 /* Model */,
 				DAA78A65210535A100606D79 /* RepositoriesList */,
 				DAA78A532105357500606D79 /* AppDelegate.swift */,
@@ -80,8 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				DAA78A682105363400606D79 /* RepositoriesListView.swift */,
-				DAA78A66210535EE00606D79 /* RepositoriesListPresenter.swift */,
 				DAA78A6D2105390000606D79 /* RepositoriesListTableViewController.swift */,
+				DAA78A66210535EE00606D79 /* RepositoriesListPresenter.swift */,
 				DAA78A6E2105390000606D79 /* RepositoriesListTableViewController.xib */,
 			);
 			path = RepositoriesList;
@@ -93,6 +98,15 @@
 				DAA78A6B2105368000606D79 /* Repository.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DAA78A712105417E00606D79 /* UtilityViews */ = {
+			isa = PBXGroup;
+			children = (
+				DAA78A76210542A400606D79 /* MessageView.swift */,
+				DAA78A782105430600606D79 /* MessageView.xib */,
+			);
+			path = UtilityViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +169,7 @@
 			files = (
 				DAA78A5E2105357A00606D79 /* LaunchScreen.storyboard in Resources */,
 				DAA78A5B2105357A00606D79 /* Assets.xcassets in Resources */,
+				DAA78A792105430600606D79 /* MessageView.xib in Resources */,
 				DAA78A592105357500606D79 /* Main.storyboard in Resources */,
 				DAA78A702105390000606D79 /* RepositoriesListTableViewController.xib in Resources */,
 			);
@@ -172,6 +187,7 @@
 				DAA78A6C2105368000606D79 /* Repository.swift in Sources */,
 				DAA78A6F2105390000606D79 /* RepositoriesListTableViewController.swift in Sources */,
 				DAA78A67210535EE00606D79 /* RepositoriesListPresenter.swift in Sources */,
+				DAA78A77210542A400606D79 /* MessageView.swift in Sources */,
 				DAA78A542105357500606D79 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

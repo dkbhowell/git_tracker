@@ -11,7 +11,7 @@ import Foundation
 class RepositoriesListPresenter {
     
     var repositories: [Repository]
-    let view: RepositoriesListView
+    unowned let view: RepositoriesListView
     
     init(view: RepositoriesListView) {
         self.view = view
@@ -22,7 +22,6 @@ class RepositoriesListPresenter {
         ]
         view.showRepositories(repositories: repositories)
     }
-    
 }
 
 extension RepositoriesListPresenter {

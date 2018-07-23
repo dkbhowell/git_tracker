@@ -11,11 +11,40 @@ import UIKit
 class RepositoriesListTableViewController: UITableViewController {
     let detailCellReuseId = "detailCellReuseId"
     var repositories = [Repository]()
+    var presenter: RepositoriesListPresenter!
+    var overlay: UIView?
         
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 //         self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    private func showNoRepositoriesOverlay() {
+        let messageView = MessageView.create()
+        messageView.message = "No Repositories Found"
+        showOverlay(overlay: messageView)
+    }
+    
+    private func showOverlay(overlay: UIView) {
+        overlay.translatesAutoresizingMaskIntoConstraints = false
+        removeOverlay()
+        view.addSubview(overlay)
+        NSLayoutConstraint.activate([
+            overlay.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            overlay.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            overlay.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            overlay.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        view.bringSubview(toFront: overlay)
+        tableView.separatorStyle = .none
+        self.overlay = overlay
+    }
+    
+    private func removeOverlay() {
+        overlay?.removeFromSuperview()
+        tableView.separatorStyle = .singleLine
+        overlay = nil
     }
 
     // MARK: - Table view data source
@@ -86,5 +115,11 @@ extension RepositoriesListTableViewController: RepositoriesListView {
     func showRepositories(repositories: [Repository]) {
         self.repositories = repositories
         tableView.reloadData()
+        
+        if repositories.count > 0 {
+            removeOverlay()
+        } else {
+            showNoRepositoriesOverlay()
+        }
     }
 }

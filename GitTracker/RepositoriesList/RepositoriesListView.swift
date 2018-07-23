@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol RepositoriesListView {
+protocol RepositoriesListView: class {
     func showRepositories(repositories: [Repository])
 }

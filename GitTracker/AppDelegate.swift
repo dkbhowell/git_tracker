@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let window = window else { fatalError("No Window") }
         let rootController = RepositoriesListTableViewController(nibName: "RepositoriesListTableViewController", bundle: nil)
         let rootPresenter = RepositoriesListPresenter(view: rootController)
+        rootController.presenter = rootPresenter
         window.rootViewController = rootController
         window.makeKeyAndVisible()
         return true
