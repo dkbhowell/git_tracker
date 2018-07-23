@@ -122,4 +122,13 @@ extension RepositoriesListTableViewController: RepositoriesListView {
             showNoRepositoriesOverlay()
         }
     }
+    
+    func showLoadingView() {
+        let loadingView = LoadingView()
+        showOverlay(overlay: loadingView)
+    }
+    
+    func hideLoadingView() {
+        removeOverlay()
+    }
 }

@@ -19,6 +19,7 @@
 		DAA78A702105390000606D79 /* RepositoriesListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA78A6E2105390000606D79 /* RepositoriesListTableViewController.xib */; };
 		DAA78A77210542A400606D79 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA78A76210542A400606D79 /* MessageView.swift */; };
 		DAA78A792105430600606D79 /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA78A782105430600606D79 /* MessageView.xib */; };
+		DAA78A7B210554E000606D79 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA78A7A210554E000606D79 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DAA78A6E2105390000606D79 /* RepositoriesListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListTableViewController.xib; sourceTree = "<group>"; };
 		DAA78A76210542A400606D79 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		DAA78A782105430600606D79 /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
+		DAA78A7A210554E000606D79 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				DAA78A76210542A400606D79 /* MessageView.swift */,
 				DAA78A782105430600606D79 /* MessageView.xib */,
+				DAA78A7A210554E000606D79 /* LoadingView.swift */,
 			);
 			path = UtilityViews;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				DAA78A6C2105368000606D79 /* Repository.swift in Sources */,
 				DAA78A6F2105390000606D79 /* RepositoriesListTableViewController.swift in Sources */,
 				DAA78A67210535EE00606D79 /* RepositoriesListPresenter.swift in Sources */,
+				DAA78A7B210554E000606D79 /* LoadingView.swift in Sources */,
 				DAA78A77210542A400606D79 /* MessageView.swift in Sources */,
 				DAA78A542105357500606D79 /* AppDelegate.swift in Sources */,
 			);

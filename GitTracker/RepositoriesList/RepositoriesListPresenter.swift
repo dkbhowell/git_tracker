@@ -20,7 +20,12 @@ class RepositoriesListPresenter {
             Repository(name: "PupPack", description: "Connect to the World Wide Wag"),
             Repository(name: "GitTracker", description: "Keep up with your projects")
         ]
-        view.showRepositories(repositories: repositories)
+        view.showLoadingView()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            view.hideLoadingView()
+            view.showRepositories(repositories: self.repositories)
+        }
     }
 }
 
