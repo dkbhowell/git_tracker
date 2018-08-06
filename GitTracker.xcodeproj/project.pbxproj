@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1899372118D11900FA0496 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1899362118D11900FA0496 /* GitHubClient.swift */; };
 		DAA78A542105357500606D79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA78A532105357500606D79 /* AppDelegate.swift */; };
 		DAA78A592105357500606D79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA78A572105357500606D79 /* Main.storyboard */; };
 		DAA78A5B2105357A00606D79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAA78A5A2105357A00606D79 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA1899362118D11900FA0496 /* GitHubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClient.swift; sourceTree = "<group>"; };
 		DAA78A502105357500606D79 /* GitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA78A532105357500606D79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAA78A582105357500606D79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA1899352118D0FE00FA0496 /* github_client */ = {
+			isa = PBXGroup;
+			children = (
+				DA1899362118D11900FA0496 /* GitHubClient.swift */,
+			);
+			path = github_client;
+			sourceTree = "<group>";
+		};
 		DAA78A472105357500606D79 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		DAA78A522105357500606D79 /* GitTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DA1899352118D0FE00FA0496 /* github_client */,
 				DAA78A712105417E00606D79 /* UtilityViews */,
 				DAA78A6A2105366F00606D79 /* Model */,
 				DAA78A65210535A100606D79 /* RepositoriesList */,
@@ -189,6 +200,7 @@
 				DAA78A7B210554E000606D79 /* LoadingView.swift in Sources */,
 				DAA78A77210542A400606D79 /* MessageView.swift in Sources */,
 				DAA78A542105357500606D79 /* AppDelegate.swift in Sources */,
+				DA1899372118D11900FA0496 /* GitHubClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

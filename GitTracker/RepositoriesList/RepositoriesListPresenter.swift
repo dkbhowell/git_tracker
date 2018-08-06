@@ -12,8 +12,10 @@ class RepositoriesListPresenter {
     
     var repositories: [Repository]
     unowned let view: RepositoriesListView
+    let gitClient: GitHubClient
     
-    init(view: RepositoriesListView) {
+    init(view: RepositoriesListView, gitClient: GitHubClient) {
+        self.gitClient = gitClient
         self.view = view
         self.repositories = [
             Repository(name: "OneScore", description: "Making hard decicsions easy"),
@@ -25,6 +27,10 @@ class RepositoriesListPresenter {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             view.showRepositories(repositories: self.repositories)
         }
+    }
+    
+    func refreshRepositories() {
+        gitClient.makeQuery()
     }
 }
 

@@ -37,6 +37,13 @@ class RepositoriesListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.title = "Repositories"
+        let reloadButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshRepos))
+        navigationItem.rightBarButtonItem = reloadButton
+    }
+    
+    @objc func refreshRepos() {
+        presenter.refreshRepositories()
     }
     
     // MARK: Overlay Functions
