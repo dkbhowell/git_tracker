@@ -16,10 +16,10 @@ class RepositoriesListTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 //         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    // MARK: Overlay Functions
     private func showNoRepositoriesOverlay() {
         let messageView = MessageView.create()
         messageView.message = "No Repositories Found"
@@ -58,7 +58,7 @@ class RepositoriesListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reusedCell = tableView.dequeueReusableCell(withIdentifier: detailCellReuseId)
-        let cell = reusedCell != nil ? reusedCell! : UITableViewCell(style: .subtitle, reuseIdentifier: detailCellReuseId)
+        let cell = reusedCell ?? UITableViewCell(style: .subtitle, reuseIdentifier: detailCellReuseId)
         let repository = repositories[indexPath.row]
         cell.textLabel?.text = repository.name
         cell.detailTextLabel?.text = repository.description
