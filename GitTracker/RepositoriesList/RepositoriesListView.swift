@@ -11,4 +11,5 @@ import Foundation
 protocol RepositoriesListView: class {
     func showRepositories(repositories: [Repository])
     func showLoadingView()
+    func showAlert(withTitle: String, message: String)
 }

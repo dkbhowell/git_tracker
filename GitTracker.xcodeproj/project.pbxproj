@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA1899372118D11900FA0496 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1899362118D11900FA0496 /* GitHubClient.swift */; };
+		DA6550F02118E82200E03BFF /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6550EF2118E82200E03BFF /* NetworkingError.swift */; };
 		DAA78A542105357500606D79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA78A532105357500606D79 /* AppDelegate.swift */; };
 		DAA78A592105357500606D79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA78A572105357500606D79 /* Main.storyboard */; };
 		DAA78A5B2105357A00606D79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAA78A5A2105357A00606D79 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		DA1899362118D11900FA0496 /* GitHubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClient.swift; sourceTree = "<group>"; };
+		DA6550EF2118E82200E03BFF /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		DAA78A502105357500606D79 /* GitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA78A532105357500606D79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAA78A582105357500606D79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1899362118D11900FA0496 /* GitHubClient.swift */,
+				DA6550EF2118E82200E03BFF /* NetworkingError.swift */,
 			);
 			path = github_client;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				DAA78A6C2105368000606D79 /* Repository.swift in Sources */,
 				DAA78A6F2105390000606D79 /* RepositoriesListTableViewController.swift in Sources */,
 				DAA78A67210535EE00606D79 /* RepositoriesListPresenter.swift in Sources */,
+				DA6550F02118E82200E03BFF /* NetworkingError.swift in Sources */,
 				DAA78A7B210554E000606D79 /* LoadingView.swift in Sources */,
 				DAA78A77210542A400606D79 /* MessageView.swift in Sources */,
 				DAA78A542105357500606D79 /* AppDelegate.swift in Sources */,

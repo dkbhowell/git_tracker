@@ -30,7 +30,21 @@ class RepositoriesListPresenter {
     }
     
     func refreshRepositories() {
-        gitClient.makeQuery()
+        view.showLoadingView()
+        gitClient.fetchRepositories { (repos) in
+            switch repos {
+            case .success(let repos):
+                self.repositories = repos
+                DispatchQueue.main.async {
+                    self.view.showRepositories(repositories: repos)
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.view.showRepositories(repositories: self.repositories)
+                }
+                self.view.showAlert(withTitle: NetworkingError.genericTitle, message: error.localizedDescription)
+            }
+        }
     }
 }
 

@@ -165,4 +165,9 @@ extension RepositoriesListTableViewController: RepositoriesListView {
     func showLoadingView() {
         state = .loading
     }
+    func showAlert(withTitle: String, message: String) {
+        let alertVC = UIAlertController(title: withTitle, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
 }
