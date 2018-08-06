@@ -13,6 +13,26 @@ class RepositoriesListTableViewController: UITableViewController {
     var repositories = [Repository]()
     var presenter: RepositoriesListPresenter!
     var overlay: UIView?
+    
+    // MARK: View State
+    private enum State {
+        case loading
+        case empty
+        case showingRepositories(repos: [Repository])
+    }
+    private var state: State = .empty {
+        didSet {
+            switch state {
+            case .loading:
+                let loadingView = LoadingView()
+                showOverlay(overlay: loadingView)
+            case .empty:
+                showNoRepositoriesOverlay()
+            case .showingRepositories(let repos):
+                refreshTableView(repos: repos)
+            }
+        }
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +84,26 @@ class RepositoriesListTableViewController: UITableViewController {
         cell.detailTextLabel?.text = repository.description
         return cell
     }
+    
+    private func refreshTableView(repos: [Repository]) {
+        if repos.count > 0 {
+            removeOverlay()
+        } else {
+            showNoRepositoriesOverlay()
+        }
+        tableView.beginUpdates()
+        for i in 0..<self.repositories.count {
+            print("DELETING: \(i)")
+            let idx = IndexPath(row: i, section: 0)
+            tableView.deleteRows(at: [idx], with: .automatic)
+        }
+        self.repositories = repos
+        for i in 0..<self.repositories.count {
+            let idx = IndexPath(row: i, section: 0)
+            tableView.insertRows(at: [idx], with: .automatic)
+        }
+        tableView.endUpdates()
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -113,22 +153,9 @@ class RepositoriesListTableViewController: UITableViewController {
 
 extension RepositoriesListTableViewController: RepositoriesListView {
     func showRepositories(repositories: [Repository]) {
-        self.repositories = repositories
-        tableView.reloadData()
-        
-        if repositories.count > 0 {
-            removeOverlay()
-        } else {
-            showNoRepositoriesOverlay()
-        }
+        state = .showingRepositories(repos: repositories)
     }
-    
     func showLoadingView() {
-        let loadingView = LoadingView()
-        showOverlay(overlay: loadingView)
-    }
-    
-    func hideLoadingView() {
-        removeOverlay()
+        state = .loading
     }
 }

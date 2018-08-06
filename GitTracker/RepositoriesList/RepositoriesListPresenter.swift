@@ -23,7 +23,6 @@ class RepositoriesListPresenter {
         view.showLoadingView()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            view.hideLoadingView()
             view.showRepositories(repositories: self.repositories)
         }
     }
