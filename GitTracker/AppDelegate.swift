@@ -17,10 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         guard let window = window else { fatalError("No Window") }
-        let rootController = RepositoriesListTableViewController(nibName: "RepositoriesListTableViewController", bundle: nil)
-        let nav = UINavigationController(rootViewController: rootController)
+        let navigator = Navigator()
+        let nav = UINavigationController(nibName: nil, bundle: nil)
+        let rootController = navigator.createRepositoryListView(withNav: nav)
         let gitClient = GitHubClient()
-        let rootPresenter = RepositoriesListPresenter(view: rootController, gitClient: gitClient)
+        let rootPresenter = RepositoriesListPresenter(view: rootController, gitClient: gitClient, navigator: navigator)
         rootController.presenter = rootPresenter
         window.rootViewController = nav
         window.makeKeyAndVisible()

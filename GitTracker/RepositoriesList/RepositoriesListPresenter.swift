@@ -13,14 +13,16 @@ class RepositoriesListPresenter {
     var repositories: [Repository]
     unowned let view: RepositoriesListView
     let gitClient: GitHubClient
+    let navigator: Navigator
     
-    init(view: RepositoriesListView, gitClient: GitHubClient) {
+    init(view: RepositoriesListView, gitClient: GitHubClient, navigator: Navigator) {
         self.gitClient = gitClient
         self.view = view
+        self.navigator = navigator
         self.repositories = [
-            Repository(name: "OneScore", description: "Making hard decicsions easy"),
-            Repository(name: "PupPack", description: "Connect to the World Wide Wag"),
-            Repository(name: "GitTracker", description: "Keep up with your projects")
+            Repository(name: "OneScore", description: "Making hard decicsions easy", stars: 55),
+            Repository(name: "PupPack", description: "Connect to the World Wide Wag", stars: 154),
+            Repository(name: "GitTracker", description: "Keep up with your projects", stars: 7534)
         ]
         view.showLoadingView()
         
@@ -45,15 +47,5 @@ class RepositoriesListPresenter {
                 self.view.showAlert(withTitle: NetworkingError.genericTitle, message: error.localizedDescription)
             }
         }
-    }
-}
-
-extension RepositoriesListPresenter {
-    func genDummyData() -> [Repository] {
-        return [
-            Repository(name: "OneScore", description: "Making hard decicsions easy"),
-            Repository(name: "PupPack", description: "Connect to the World Wide Wag"),
-            Repository(name: "GitTracker", description: "Keep up with your projects")
-        ]
     }
 }

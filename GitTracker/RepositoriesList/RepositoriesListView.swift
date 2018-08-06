@@ -9,6 +9,7 @@
 import Foundation
 
 protocol RepositoriesListView: class {
+    var presenter: RepositoriesListPresenter! { get set }
     func showRepositories(repositories: [Repository])
     func showLoadingView()
     func showAlert(withTitle: String, message: String)

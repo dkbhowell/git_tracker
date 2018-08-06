@@ -29,7 +29,7 @@ class RepositoriesListTableViewController: UITableViewController {
             case .empty:
                 showNoRepositoriesOverlay()
             case .showingRepositories(let repos):
-                refreshTableView(repos: repos)
+                updateTableView(withRepos: repos)
             }
         }
     }
@@ -92,7 +92,7 @@ class RepositoriesListTableViewController: UITableViewController {
         return cell
     }
     
-    private func refreshTableView(repos: [Repository]) {
+    private func updateTableView(withRepos repos: [Repository]) {
         if repos.count > 0 {
             removeOverlay()
         } else {
@@ -110,6 +110,13 @@ class RepositoriesListTableViewController: UITableViewController {
             tableView.insertRows(at: [idx], with: .automatic)
         }
         tableView.endUpdates()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let repository = self.repositories[indexPath.row]
+        let detailVC = RepositoryViewController(repository: repository)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 
     /*
